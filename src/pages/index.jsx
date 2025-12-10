@@ -27,9 +27,10 @@ export const Home = () => {
   });
 
   return (
-    <div className="container flex justify-center items-start min-h-screen ">
-      <div className="inner-container w-[377px] flex flex-col mt-20 p-6 bg-white rounded-lg shadow gap-6">
-        <h1 className="title font-semibold flex justify-center text-xl">
+    <div className="container flex justify-center items-start min-h-screen font-normal">
+      <div className="inner-container w-[377px] flex gap-6 flex-col mt-20 p-6 bg-white rounded-lg shadow-lg "
+         style={{ boxShadow: "0 15px 35px rgba(0,0,0,0.15)" }}>
+        <h1 className="title  font-semibold tracking-wide text-gray-800  flex justify-center text-xl">
           To-Do List
         </h1>
 
