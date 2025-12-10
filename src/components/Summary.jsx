@@ -6,7 +6,7 @@ export const Summary = ({ handleClearCompletedTasks, taskListValue }) => {
   ).length;
 
   return (
-    <div className="summary flex justify-between items-center mt-4 text-sm text-gray-600">
+    <div className="summary flex justify-between items-center mt-4 h-[45px] border-t border-[#e4e4e7] text-sm text-gray-600">
       <span>{completedCount} task completed</span>
 
       <button
