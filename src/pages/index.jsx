@@ -27,10 +27,9 @@ export const Home = () => {
   });
 
   return (
-    <div className="container flex justify-center items-start min-h-screen font-normal">
-      <div className="inner-container w-[377px] flex gap-6 flex-col mt-20 p-6 bg-white rounded-lg shadow-lg "
-         style={{ boxShadow: "0 15px 35px rgba(0,0,0,0.15)" }}>
-        <h1 className="title  font-semibold tracking-wide text-gray-800  flex justify-center text-xl">
+    <div className="container flex justify-center items-start h-screen ">
+      <div className="inner-container  flex flex-col mt-20 p-6 bg-white rounded-lg shadow gap-6">
+        <h1 className="title font-semibold flex justify-center text-xl">
           To-Do List
         </h1>
 
@@ -47,6 +46,12 @@ export const Home = () => {
           updateTaskList={setTaskList}
         />
 
+        {!filteredTasks.length && (
+          <div className="text-s flex justify-center font-semibold text-gray-500">
+            No tasks yet. Add one above!
+          </div>
+        )}
+
         {Boolean(taskList.length) && (
           <Summary
             handleClearCompletedTasks={clearCompletedTasks}
@@ -54,7 +59,7 @@ export const Home = () => {
           />
         )}
 
-        <div className="footer flex justify-center justify-self-end gap-1 mt-4 text-sm text-gray-500">
+        <div className="footer flex justify-center justify-self-end gap-1 mt-4 text-sm font-semibold text-gray-500">
           <span>Powered by</span>
           <span className="text-blue-500">Khulan</span>
         </div>
