@@ -17,6 +17,14 @@ export const Form = ({ updateTaskList, taskListValue }) => {
     setInputValue("");
   };
 
+  // const addCompletedTask = () => {
+  //   const confirmAdd = window.confirm("Please enter a task!");
+  //   if (!confirmAdd) return;
+  //   const remainingAddTasks = taskList.filter((task) => !task.isCompleted);
+  //   setTaskList(remainingAddTasks);
+  // };
+  // updateTaskList = { addCompletedTask };
+
   return (
     <form onSubmit={handleSubmit} className="w-[345px] h-10 flex gap-1.5 ">
       <input
@@ -26,7 +34,10 @@ export const Form = ({ updateTaskList, taskListValue }) => {
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
       />
-      <button className="w-[59px] h-10 px-3 py-1 mr-3.5 rounded-md border font-semibold transition text-sm text-white bg-[#3c82f6]">
+      <button
+        className="w-[59px] h-10 px-3 py-1 mr-3.5 rounded-md border font-semibold transition text-sm text-white bg-[#3c82f6]"
+        // onClick={updateTaskList}
+      >
         Add
       </button>
     </form>

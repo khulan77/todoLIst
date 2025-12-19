@@ -19,6 +19,15 @@ export const Home = () => {
     setTaskList(remainingTasks);
   };
 
+  // const addCompletedTask = () => {
+  //   const confirmAdd = window.confirm("Please enter a task!");
+
+  //   if (!confirmAdd) return;
+
+  //   const remainingAddTasks = taskList.filter((task) => !task.isCompleted);
+  //   setTaskList(remainingAddTasks);
+  // };
+
   const filteredTasks = taskList.filter((task) => {
     if (currentFilter === "active") return !task.isCompleted;
     if (currentFilter === "completed") return task.isCompleted;
@@ -53,10 +62,13 @@ export const Home = () => {
         )}
 
         {Boolean(taskList.length) && (
-          <Summary
-            handleClearCompletedTasks={clearCompletedTasks}
-            taskListValue={taskList}
-          />
+          <>
+            <Summary
+              handleClearCompletedTasks={clearCompletedTasks}
+              taskListValue={taskList}
+            />
+            {/* <Form updateTaskList={addCompletedTask} taskListValue={taskList} /> */}
+          </>
         )}
 
         <div className="footer flex justify-center justify-self-end gap-1 mt-4 text-sm font-semibold text-gray-500">
